@@ -7,9 +7,16 @@
     <string name="string_title_total">Total</string>
     <string name="string_title_debits">Debits</string>
     <string name="string_title_credits">Credits</string>
+    <string name="string_title_recent_transactions">Recent Transactions</string>
 
     <string name="string_list_group_sample_transaction_name">Paytm-02457D2343</string>
-    <string name="string_list_group_sample_transaction_id">ID: 859648321954876</string>
+    <string name="string_list_group_sample_transaction_id">Transaction ID: 859648321954876</string>
     <string name="string_list_group_sample_transaction_amount">Rs.200</string>
-
+    <string name="string_list_group_sample_transaction_date">25th Feb 2020 09:45 AM</string>
+    <string name="string_rv_item__title_transaction_name">Transaction Name</string>
+    <string name="string_rv_item__title_transaction_amount">Amount</string>
+    <string name="string_rv_item__value_transaction_name">Paytm-02457D2343</string>
+    <string name="string_rv_item__value_transaction_amount">Rs.200</string>
+    <string name="string_rv_item_transactions_type">Paytm</string>
+    <string name="string_rv_item_transactions_date">26th Feb 09:45 AM</string>
 </resources>
