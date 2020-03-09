@@ -51,23 +51,19 @@ public class MainActivity extends AppCompatActivity {
         tvAppNameAppbar = (TextView) findViewById(R.id.tv_app_name_appbar);
 
         transactions = new ArrayList<>();
-        transactions.add(new Transaction("Paytm-248635", "Rs.945", "Paytm", "25th Feb 09:45 AM"));
+        transactions.add(new Transaction("Paytm-248635", "Rs.945", "paytm", "25th Feb 09:45 AM"));
         transactions.add(new Transaction("ABC shop", "Rs.20", "GooglePe", "7th Mar 08:00 PM"));
         transactions.add(new Transaction("Ola-money 2211", "Rs.89", "Ola Money", "9th Mar 09:45 PM"));
         transactions.add(new Transaction("PhonePe", "Rs.34", "PhonePe", "20th Aug 12:19 PM"));
-        transactions.add(new Transaction("Paytm-248635", "Rs.945", "Paytm", "25th Feb 09:45 AM"));
+        transactions.add(new Transaction("Paytm-248635", "Rs.945", "paytm", "25th Feb 09:45 AM"));
         transactions.add(new Transaction("ABC shop", "Rs.20", "GooglePe", "7th Mar 08:00 PM"));
         transactions.add(new Transaction("Ola-money 2211", "Rs.89", "Ola Money", "9th Mar 09:45 PM"));
         transactions.add(new Transaction("PhonePe", "Rs.34", "PhonePe", "20th Aug 12:19 PM"));
-        transactions.add(new Transaction("Paytm-248635", "Rs.945", "Paytm", "25th Feb 09:45 AM"));
+        transactions.add(new Transaction("Paytm-248635", "Rs.945", "paytm", "25th Feb 09:45 AM"));
         transactions.add(new Transaction("ABC shop", "Rs.20", "GooglePe", "7th Mar 08:00 PM"));
         transactions.add(new Transaction("Ola-money 2211", "Rs.89", "Ola Money", "9th Mar 09:45 PM"));
         transactions.add(new Transaction("PhonePe", "Rs.34", "PhonePe", "20th Aug 12:19 PM"));
-        transactions.add(new Transaction("Paytm-248635", "Rs.945", "Paytm", "25th Feb 09:45 AM"));
-        transactions.add(new Transaction("ABC shop", "Rs.20", "GooglePe", "7th Mar 08:00 PM"));
-        transactions.add(new Transaction("Ola-money 2211", "Rs.89", "Ola Money", "9th Mar 09:45 PM"));
-        transactions.add(new Transaction("PhonePe", "Rs.34", "PhonePe", "20th Aug 12:19 PM"));
-        transactions.add(new Transaction("Paytm-248635", "Rs.945", "Paytm", "25th Feb 09:45 AM"));
+        transactions.add(new Transaction("Paytm-248635", "Rs.945", "paytm", "25th Feb 09:45 AM"));
         transactions.add(new Transaction("ABC shop", "Rs.20", "GooglePe", "7th Mar 08:00 PM"));
         transactions.add(new Transaction("Ola-money 2211", "Rs.89", "Ola Money", "9th Mar 09:45 PM"));
         transactions.add(new Transaction("PhonePe", "Rs.34", "PhonePe", "20th Aug 12:19 PM"));
@@ -107,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         tvLabelTotal.setTypeface(typefaceMedium);
         tvLabelDebits.setTypeface(typefaceMedium);
         tvLabelCredits.setTypeface(typefaceMedium);
-        tvLabelRecentTransactions.setTypeface(typefaceRegular);
+        tvLabelRecentTransactions.setTypeface(typefaceLight);
         tvAppNameAppbar.setTypeface(typefaceRegular);
     }
 }

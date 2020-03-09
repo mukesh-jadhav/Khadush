@@ -9,7 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
-            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="12sp"
             android:id="@+id/tv_title_recent_transactions"
             android:padding="5dp"
             android:layout_marginLeft="5dp"
