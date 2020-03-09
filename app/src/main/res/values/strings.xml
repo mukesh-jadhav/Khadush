@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Khadush</string>
+    <string name="string_value_sample_total">Rs.2000</string>
+    <string name="string_value_sample_debits">Rs.1200</string>
+    <string name="string_value_sample_credits">Rs.800</string>
+
+    <string name="string_title_total">Total</string>
+    <string name="string_title_debits">Debits</string>
+    <string name="string_title_credits">Credits</string>
+
+    <string name="string_list_group_sample_transaction_name">Paytm-02457D2343</string>
+    <string name="string_list_group_sample_transaction_id">ID: 859648321954876</string>
+    <string name="string_list_group_sample_transaction_amount">Rs.200</string>
+
+</resources>
