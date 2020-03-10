@@ -12,6 +12,49 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:textSize="12sp"
+            android:id="@+id/tv_title_transaction_filters"
+            android:padding="5dp"
+            android:layout_marginLeft="5dp"
+            android:text="@string/string_title_transaction_filters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.chip.ChipGroup
+            android:layout_gravity="center"
+            android:id="@+id/cg_transaction_filters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.chip.Chip
+                android:layout_marginLeft="10dp"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:id="@+id/chip_transaction_filters_chip_bearer"
+                android:text="@string/string_title_transaction_filters_chip_bearer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:id="@+id/chip_transaction_filters_chip_date"
+                android:layout_marginLeft="16dp"
+                android:text="@string/string_title_transaction_filters_chip_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:id="@+id/chip_transaction_filters_chip_type"
+                android:text="@string/string_title_transaction_filters_chip_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:id="@+id/chip_transaction_filters_chip_reset"
+                android:text="@string/string_title_transaction_filters_chip_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.chip.ChipGroup>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="12sp"
             android:id="@+id/tv_title_recent_transactions"
             android:padding="5dp"
             android:layout_marginLeft="5dp"

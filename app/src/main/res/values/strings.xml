@@ -19,4 +19,13 @@
     <string name="string_rv_item__value_transaction_amount">Rs.200</string>
     <string name="string_rv_item_transactions_type">Paytm</string>
     <string name="string_rv_item_transactions_date">26th Feb 09:45 AM</string>
+
+    <string name="string_title_transaction_filters">Transaction Filters</string>
+    <string name="string_title_transaction_filters_chip_date">Date</string>
+    <string name="string_title_transaction_filters_chip_type">Type</string>
+    <string name="string_title_transaction_filters_chip_amount">Amount</string>
+    <string name="string_title_transaction_filters_chip_bearer">Bearer</string>
+    <string name="string_title_transaction_filters_chip_reset">Reset</string>
+
+    <string name="string_menu_add_new_transaction_type">Add new Transaction Type</string>
 </resources>
