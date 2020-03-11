@@ -8,6 +8,7 @@
     <string name="string_title_debits">Debits</string>
     <string name="string_title_credits">Credits</string>
     <string name="string_title_recent_transactions">Recent Transactions</string>
+    <string name="string_title_add_new_transaction_type">Add new transaction type</string>
 
     <string name="string_list_group_sample_transaction_name">Paytm-02457D2343</string>
     <string name="string_list_group_sample_transaction_id">Transaction ID: 859648321954876</string>

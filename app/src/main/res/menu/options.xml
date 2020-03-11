@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/menu_add_new_transaction_type"
+        app:showAsAction="always"
         android:icon="@drawable/icon_message"
         android:title="@string/string_menu_add_new_transaction_type" />
 </menu>

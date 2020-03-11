@@ -24,19 +24,35 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize">
-                <ImageView
-                    android:padding="8dp"
-                    android:src="@android:drawable/ic_menu_directions"
-                    android:layout_width="?attr/actionBarSize"
-                    android:layout_height="?attr/actionBarSize"/>
-                <TextView
-                    android:id="@+id/tv_app_name_appbar"
-                    android:textSize="18dp"
-                    android:text="@string/app_name"
-                    android:textColor="@color/colorWhite"
-                    android:gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/iv_toolbar_app_icon"
+                        android:padding="8dp"
+                        android:src="@android:drawable/ic_menu_directions"
+                        android:layout_width="?attr/actionBarSize"
+                        android:layout_height="?attr/actionBarSize"/>
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/iv_toolbar_app_icon"
+                        android:id="@+id/tv_toolbar_app_name"
+                        android:textSize="18dp"
+                        android:text="@string/app_name"
+                        android:textColor="@color/colorWhite"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <ImageView
+                        android:id="@+id/iv_toolbar_overflow_menu_add_new_transaction_type"
+                        android:layout_marginRight="16dp"
+                        android:layout_alignParentRight="true"
+                        android:padding="8dp"
+                        android:src="@drawable/icon_message"
+                        android:layout_width="?attr/actionBarSize"
+                        android:layout_height="?attr/actionBarSize"/>
+                </RelativeLayout>
             </androidx.appcompat.widget.Toolbar>
             <LinearLayout
                 android:paddingBottom="0dp"

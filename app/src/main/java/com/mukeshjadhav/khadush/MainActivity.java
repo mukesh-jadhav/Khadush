@@ -7,15 +7,20 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -23,17 +28,20 @@ import com.google.android.material.chip.Chip;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Typeface typefaceMedium, typefaceLight, typefaceRegular, typefaceThin;
     private TextView tvValueTotal, tvValueDebits, tvValueCredits, tvLabelTotal, tvLabelDebits,
             tvLabelCredits, tvLabelRecentTransactions, tvAppNameAppbar, tvLabeltransactionFilters;
 
+    private ImageView ivAddNewTransactionType;
     private RecyclerView rvTransactions;
     private List<Transaction> transactions;
     private Chip chipBearer, chipDate, chipType, chipReset;
     private CompoundButton.OnCheckedChangeListener filterChipListener;
     private DBManager dbManager;
     private Cursor cursor;
+    private ProgressDialog dialog;
+    private TransactionsRecyclerviewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
         initTypeFaces();
         initComponents();
         setTypeFaces();
-        dumpMessages();
-        resetTransactionsRecycler();
+        //dumpMessages();
+        //resetTransactionsRecycler();
+        new resetTransactionsRecyclerAsync().execute();
     }
 
     private void initTypeFaces(){
@@ -63,13 +72,16 @@ public class MainActivity extends AppCompatActivity {
         tvLabelCredits = (TextView) findViewById(R.id.tv_label_ma_credits);
         rvTransactions = (RecyclerView) findViewById(R.id.rv_ma_transactions);
         tvLabelRecentTransactions = (TextView) findViewById(R.id.tv_title_recent_transactions);
-        tvAppNameAppbar = (TextView) findViewById(R.id.tv_app_name_appbar);
+        tvAppNameAppbar = (TextView) findViewById(R.id.tv_toolbar_app_name);
         tvLabeltransactionFilters = (TextView) findViewById(R.id.tv_title_transaction_filters);
 
         chipBearer = (Chip) findViewById(R.id.chip_transaction_filters_chip_bearer);
         chipDate = (Chip) findViewById(R.id.chip_transaction_filters_chip_date);
         chipType = (Chip) findViewById(R.id.chip_transaction_filters_chip_type);
         chipReset = (Chip) findViewById(R.id.chip_transaction_filters_chip_reset);
+
+        ivAddNewTransactionType = (ImageView) findViewById(R.id.iv_toolbar_overflow_menu_add_new_transaction_type);
+        ivAddNewTransactionType.setOnClickListener(this);
 
         filterChipListener = new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -155,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         return new Transaction("2521991", "paytm","200","25-12-1991","paytm");
     }
 
-    private void resetTransactionsRecycler(){
+    private void refreshDB(){
         cursor = dbManager.fetch();
 
         if (cursor != null) {
@@ -171,8 +183,10 @@ public class MainActivity extends AppCompatActivity {
                 } while (cursor.moveToNext());
             }
         }
+    }
 
-        TransactionsRecyclerviewAdapter adapter = new TransactionsRecyclerviewAdapter(this, transactions);
+    private void resetTransactionsRecycler(){
+        adapter = new TransactionsRecyclerviewAdapter(this, transactions);
         LinearLayoutManager manager = new LinearLayoutManager(this);
 
         rvTransactions.setLayoutManager(manager);
@@ -195,6 +209,40 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.iv_toolbar_overflow_menu_add_new_transaction_type:
+                Intent addNewTransactionType = new Intent(MainActivity.this, NewTransactionTypeActivity.class);
+                startActivity(addNewTransactionType);
+        }
+    }
+
+    private class resetTransactionsRecyclerAsync extends AsyncTask<String, String,String> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            dialog = new ProgressDialog(MainActivity.this);
+            dialog.setMessage("Updating transactions...");
+            dialog.show();
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            refreshDB();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            resetTransactionsRecycler();
+            if(dialog.isShowing()){
+                dialog.dismiss();
+            }
+        }
     }
 }
